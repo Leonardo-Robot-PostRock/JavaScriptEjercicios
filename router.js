@@ -20,7 +20,7 @@ class Router {
 
 	load(page = '/') {
 		const { paths } = this;
-		const { path } = this._paths[page] || paths.error;
+		const { path } = this._paths[page] || this._paths[404];
 
 		window.history.pushState({}, 'done', path);
 		this.createElements(page);
