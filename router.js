@@ -31,7 +31,6 @@ class Router {
 		const unidadDestinoElement = document.querySelector('.unidad-destino');
 
 		const entrada = document.querySelector('.entrada').value;
-		console.log(entrada);
 		const resultado = document.querySelector('.resultado');
 
 		return {
@@ -52,7 +51,6 @@ class Router {
 			if (tipo === 'longitud') {
 				if (unidadOrigen === 'km' && unidadDestino === 'mi') {
 					resultado.innerHTML = (entrada * 0.6213712).toFixed(2);
-					console.log(resultado.value);
 				} else if (unidadOrigen === 'mi' && unidadDestino === 'km') {
 					resultado.innerHTML = (entrada / 0.6213712).toFixed(2);
 				} else {
@@ -77,6 +75,14 @@ class Router {
 			}
 		}
 	};
+
+	createImage(mainPageDiv, path) {
+		const img = document.createElement('img');
+		img.classList.add('imagen-anime');
+		img.src = path;
+		mainPageDiv.appendChild(img);
+		return img;
+	}
 
 	createInput(mainPageDiv, placeholder) {
 		//Creación de input de entrada
@@ -114,6 +120,7 @@ class Router {
 
 	createUnitConverterElements(
 		mainPageDiv,
+		path,
 		title,
 		inputLabel,
 		selectOneLabel,
@@ -121,6 +128,8 @@ class Router {
 		options,
 		tipo
 	) {
+		const imagen = this.createImage(mainPageDiv, path);
+
 		const titulo = document.createElement('h2');
 		titulo.textContent = title;
 
@@ -141,6 +150,7 @@ class Router {
 		);
 		const resultado = this.createResultElement(mainPageDiv);
 
+		//agregar evento para que el dom escuche los cambios en los siguientes elementos
 		inputEntrada.addEventListener('change', () => this.convertirUnidades(tipo));
 		selectUno.addEventListener('change', () => this.convertirUnidades(tipo));
 		selectDos.addEventListener('change', () => this.convertirUnidades(tipo));
@@ -154,6 +164,7 @@ class Router {
 		if (page === '/' || page === 'home') {
 			this.createUnitConverterElements(
 				mainPageDiv,
+				'/assets/animeCharacter1.png',
 				'Conversor de longitud',
 				'Ingrese longitud',
 				'Unidad origen',
@@ -164,6 +175,7 @@ class Router {
 		} else if (page === 'temperatura') {
 			this.createUnitConverterElements(
 				mainPageDiv,
+				'/assets/animeCharacter2.png',
 				'Conversor de temperatura',
 				'Ingrese temperatura',
 				'Unidad origen',
@@ -174,6 +186,7 @@ class Router {
 		} else if (page === 'masa') {
 			this.createUnitConverterElements(
 				mainPageDiv,
+				'/assets/animeCharacter3.png',
 				'Conversor de masa',
 				'Ingrese peso',
 				'Unidad origen',
