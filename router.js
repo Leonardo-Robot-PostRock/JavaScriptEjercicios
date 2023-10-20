@@ -15,12 +15,13 @@ class Router {
 		} = window;
 
 		const URL = pathname === '/' ? 'home' : pathname.replace('/', '');
-		this.load(URL);
+		const validRoute = this._paths[URL] ? URL : 'home';
+		this.load(validRoute);
 	}
 
 	load(page = '/') {
-		const { paths } = this;
-		const { path } = this._paths[page] || this._paths[404];
+		const { _paths } = this;
+		const { path } = _paths[page] || _paths[404];
 
 		window.history.pushState({}, 'done', path);
 		this.createElements(page);
