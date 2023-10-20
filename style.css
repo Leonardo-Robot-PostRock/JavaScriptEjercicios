@@ -9,9 +9,11 @@ html {
 	font-family: 'DM Sans', sans-serif;
 	background-color: #292929;
 }
+
 #main-nav {
 	background-color: black;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px;
@@ -42,34 +44,61 @@ div {
 }
 
 #main-page {
-    display: flex;
+	display: grid;
+	gap: 10px;
+}
+
+.imagen-anime {
+	margin-top: 20px;
+	width: 300px;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+.entrada {
+	background-color: transparent;
+	border-radius: 4px;
+	border: solid white 1px;
+	color: white;
+	height: 40px;
+	padding: 4px;
+}
+
+.entrada:focus {
+	outline: none;
+	border: solid white 1px;
+}
+
+.resultado {
+	font-size: 2rem;
+	color: red;
 }
 
 /* Estilo base para los select */
 select {
-	width: 100px; /* Ancho completo del contenedor */
-	padding: 10px; /* Espacio interno */
-	border: 1px solid #ccc; /* Borde con color de fondo */
-	border-radius: 5px; /* Esquinas redondeadas */
-	font-size: 16px; /* Tamaño de fuente */
-	background-color: #fff; /* Fondo blanco */
-	color: #333; /* Color de texto */
-  }
-  
-  /* Estilo cuando se enfoca el select */
-  select:focus {
-	outline: none; /* Quita el borde predeterminado */
-	border-color: #007bff; /* Cambia el color del borde al enfocar */
-  }
-  
-  /* Estilo para las opciones dentro del select */
-  select option {
-	background-color: #fff; /* Fondo de las opciones */
-	color: #333; /* Color del texto de las opciones */
-  }
-  
-  /* Estilo para el borde al abrir el select */
-  select::after {
+	background-color: transparent;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	color: white;
+	font-size: 16px;
+	padding: 10px;
+	width: 100px;
+}
+
+select:focus {
+	outline: none;
+	border-color: #007bff;
+}
+
+select option {
+	background-color: transparent;
+	color: #333;
+}
+
+/* Estilo para el borde al abrir el select */
+select::after {
 	content: '\25BC'; /* Flecha hacia abajo */
 	position: absolute;
 	top: 50%;
@@ -78,4 +107,4 @@ select {
 	pointer-events: none;
 	font-size: 18px;
 	color: #777;
-  }
+}
