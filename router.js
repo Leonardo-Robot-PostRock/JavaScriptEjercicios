@@ -26,82 +26,161 @@ class Router {
 		this.createElements(page);
 	}
 
-	convertirLongitud = () => {
-		const longitudOrigenElement = document.querySelector('.unidad-origen');
-		console.log(longitudOrigenElement);
-		const longitudDestinoElement = document.querySelector('.unidad-destino');
+	getInputsAndOutputs = () => {
+		const unidadOrigenElement = document.querySelector('.unidad-origen');
+		const unidadDestinoElement = document.querySelector('.unidad-destino');
 
-		const resultado = document.querySelector('.resultado');
 		const entrada = document.querySelector('.entrada').value;
+		console.log(entrada);
+		const resultado = document.querySelector('.resultado');
 
-		if (longitudOrigenElement && longitudDestinoElement) {
-			const longitudOrigen = longitudOrigenElement.value;
-			const longitudDestino = longitudDestinoElement.value;
+		return {
+			unidadOrigenElement,
+			unidadDestinoElement,
+			entrada,
+			resultado,
+		};
+	};
 
-			if (longitudOrigen === 'km' && longitudDestino === 'mi') {
-				resultado.innerHTML = entrada * 0.6213712;
-				console.log('resultado', resultado);
-			} else if (longitudOrigen === 'mi' && longitudDestino === 'km') {
-				resultado.innerHTML = entrada / 0.6213712;
-			} else {
-				resultado.innerHTML = entrada;
+	convertirUnidades = (tipo) => {
+		const { unidadOrigenElement, unidadDestinoElement, entrada, resultado } =
+			this.getInputsAndOutputs();
+
+		const unidadOrigen = unidadOrigenElement.value;
+		const unidadDestino = unidadDestinoElement.value;
+		if (unidadOrigenElement && unidadDestinoElement) {
+			if (tipo === 'longitud') {
+				if (unidadOrigen === 'km' && unidadDestino === 'mi') {
+					resultado.innerHTML = (entrada * 0.6213712).toFixed(2);
+					console.log(resultado.value);
+				} else if (unidadOrigen === 'mi' && unidadDestino === 'km') {
+					resultado.innerHTML = (entrada / 0.6213712).toFixed(2);
+				} else {
+					resultado.innerHTML = entrada;
+				}
+			} else if (tipo === 'temperatura') {
+				if (unidadOrigen === 'ºF' && unidadDestino === 'ºC') {
+					resultado.innerHTML = (entrada - 32) / 1.8;
+				} else if (unidadOrigen === 'ºC' && unidadDestino === 'ºF') {
+					resultado.innerHTML = (entrada * 1.8 + 32).toFixed(2);
+				} else {
+					resultado.innerHTML = entrada;
+				}
+			} else if (tipo === 'masa') {
+				if (unidadOrigen === 'oz' && unidadDestino === 'kg') {
+					resultado.innerHTML = (entrada / 35.274).toFixed(2);
+				} else if (unidadOrigen === 'kg' && unidadDestino === 'oz') {
+					resultado.innerHTML = (entrada * 35.274).toFixed(2);
+				} else {
+					resultado.innerHTML = entrada;
+				}
 			}
 		}
 	};
+
+	createInput(mainPageDiv, placeholder) {
+		//Creación de input de entrada
+		const input = document.createElement('input');
+		input.classList.add('entrada');
+		input.placeholder = placeholder;
+		mainPageDiv.appendChild(input);
+		return input;
+	}
+
+	createSelect(mainPageDiv, placeholder, classParameter, options) {
+		//Obtención de los select
+		const select = document.createElement('select');
+		select.classList.add(classParameter);
+		select.placeholder = placeholder;
+
+		options.forEach((opt) => {
+			const option = document.createElement('option');
+			option.textContent = opt;
+			option.value = opt;
+			select.appendChild(option);
+		});
+
+		mainPageDiv.appendChild(select);
+
+		return select;
+	}
+
+	createResultElement(mainPageDiv) {
+		const resultado = document.createElement('p');
+		resultado.classList.add('resultado');
+		mainPageDiv.appendChild(resultado);
+		return resultado;
+	}
+
+	createUnitConverterElements(
+		mainPageDiv,
+		title,
+		inputLabel,
+		selectOneLabel,
+		selectTwoLabel,
+		options,
+		tipo
+	) {
+		const titulo = document.createElement('h2');
+		titulo.textContent = title;
+
+		mainPageDiv.appendChild(titulo);
+
+		const inputEntrada = this.createInput(mainPageDiv, inputLabel);
+		const selectUno = this.createSelect(
+			mainPageDiv,
+			selectOneLabel,
+			'unidad-origen',
+			options
+		);
+		const selectDos = this.createSelect(
+			mainPageDiv,
+			selectTwoLabel,
+			'unidad-destino',
+			options
+		);
+		const resultado = this.createResultElement(mainPageDiv);
+
+		inputEntrada.addEventListener('change', () => this.convertirUnidades(tipo));
+		selectUno.addEventListener('change', () => this.convertirUnidades(tipo));
+		selectDos.addEventListener('change', () => this.convertirUnidades(tipo));
+	}
 
 	createElements(page) {
 		//Limpia el contenido anterior
 		const mainPageDiv = document.querySelector('#main-page');
 		mainPageDiv.innerHTML = '';
 
-		//Creación del título
-		const titulo = document.createElement('h2');
-		const inputDeEntrada = document.createElement('input');
-		inputDeEntrada.classList.add('entrada');
-
-		//Obtención de los select
-		const selectUno = document.createElement('select');
-		selectUno.classList.add('unidad-origen');
-		const selectDos = document.createElement('select');
-		selectDos.classList.add('unidad-destino');
-
-		//Caja de resultado
-		const resultado = document.createElement('p');
-		resultado.classList.add('resultado');
-		console.log(resultado.value);
-
-		//Agregar los elementos al div principal
-		mainPageDiv.appendChild(titulo);
-		mainPageDiv.appendChild(inputDeEntrada);
-		mainPageDiv.appendChild(selectUno);
-		mainPageDiv.appendChild(selectDos);
-		mainPageDiv.appendChild(resultado);
-
 		if (page === '/' || page === 'home') {
-			titulo.textContent = 'Conversor de longitud';
-
-			inputDeEntrada.addEventListener('input', this.convertirLongitud);
-			selectUno.addEventListener('change', this.convertirLongitud);
-			selectDos.addEventListener('change', this.convertirLongitud);
-
-			//Inicializar los Select con las opciones
-			const units = ['km', 'mi'];
-			for (let i = 0; i < units.length; i++) {
-				const opt = units[i];
-				const options = document.createElement('option');
-
-				options.textContent = opt;
-				options.value = opt;
-				console.log(options);
-				selectUno.appendChild(options);
-
-				const clonedOption = options.cloneNode(true);
-				selectDos.appendChild(clonedOption); //
-			}
-
-			this.convertirLongitud();
-		} else if (page === '/temperatura') {
-		} else if (page === '/masa') {
+			this.createUnitConverterElements(
+				mainPageDiv,
+				'Conversor de longitud',
+				'Ingrese longitud',
+				'Unidad origen',
+				'Unidad destino',
+				['km', 'mi'],
+				'longitud'
+			);
+		} else if (page === 'temperatura') {
+			this.createUnitConverterElements(
+				mainPageDiv,
+				'Conversor de temperatura',
+				'Ingrese temperatura',
+				'Unidad origen',
+				'Unidad destino',
+				['ºF', 'ºC'],
+				'temperatura'
+			);
+		} else if (page === 'masa') {
+			this.createUnitConverterElements(
+				mainPageDiv,
+				'Conversor de masa',
+				'Ingrese peso',
+				'Unidad origen',
+				'Unidad destino',
+				['oz', 'kg'],
+				'masa'
+			);
 		} else {
 			return;
 		}
