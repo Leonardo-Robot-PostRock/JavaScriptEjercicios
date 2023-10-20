@@ -45,17 +45,24 @@ div {
 
 #main-page {
 	display: grid;
+	user-select: none;
 	place-items: center;
 	gap: 10px;
 }
 
 .imagen-anime {
-	margin-top: 20px;
+	margin: 20px 0;
 	width: 300px;
+	background-color: #242424;
+	height: 400px;
+	filter: drop-shadow(5px 5px 5px #000000);
+	object-fit: contain;
+	border-radius: 5px;
 }
 
 h2 {
 	font-size: 3rem;
+	user-select: none;
 }
 
 .entrada {
