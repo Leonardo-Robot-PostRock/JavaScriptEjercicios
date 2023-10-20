@@ -45,6 +45,7 @@ div {
 
 #main-page {
 	display: grid;
+	place-items: center;
 	gap: 10px;
 }
 
@@ -78,6 +79,7 @@ h2 {
 
 /* Estilo base para los select */
 select {
+	cursor: pointer;
 	background-color: transparent;
 	border-radius: 5px;
 	border: 1px solid #ccc;
