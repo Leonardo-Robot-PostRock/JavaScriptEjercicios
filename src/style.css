@@ -13,6 +13,7 @@ html {
 #main-nav {
 	background-color: black;
 	display: flex;
+	user-select: none;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
@@ -33,6 +34,7 @@ div {
 	margin-left: 10px;
 	text-decoration: none;
 	color: white;
+	cursor: pointer;
 }
 
 .link:hover {
