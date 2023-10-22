@@ -165,7 +165,7 @@ class Router {
 		if (page === '/' || page === 'home') {
 			this.createUnitConverterElements(
 				mainPageDiv,
-				'./assets/animeCharacter1.png',
+				'./assets/animeCharacterUno.png',
 				'Conversor de longitud',
 				'Ingrese longitud',
 				'Unidad origen',
@@ -176,7 +176,7 @@ class Router {
 		} else if (page === 'temperatura') {
 			this.createUnitConverterElements(
 				mainPageDiv,
-				'./assets/animeCharacter2.png',
+				'./assets/animeCharacterDos.png',
 				'Conversor de temperatura',
 				'Ingrese temperatura',
 				'Unidad origen',
@@ -187,7 +187,7 @@ class Router {
 		} else if (page === 'masa') {
 			this.createUnitConverterElements(
 				mainPageDiv,
-				'./assets/animeCharacter3.png',
+				'./assets/animeCharacterTres.png',
 				'Conversor de masa',
 				'Ingrese peso',
 				'Unidad origen',
