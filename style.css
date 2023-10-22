@@ -43,18 +43,25 @@ div {
 	color: red;
 }
 
+#root > #main-page {
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+}
+
 #main-page {
 	display: grid;
 	user-select: none;
 	place-items: center;
+	height: calc(100vh - 54px);
 	gap: 10px;
 }
 
 .imagen-anime {
 	margin: 20px 0;
-	width: 300px;
+	width: 200px;
 	background-color: #242424;
-	height: 400px;
+	height: 300px;
 	filter: drop-shadow(5px 5px 5px #000000);
 	object-fit: contain;
 	border-radius: 5px;
@@ -116,4 +123,12 @@ select::after {
 	pointer-events: none;
 	font-size: 18px;
 	color: #777;
+}
+
+@media (min-width: 1440px) and (max-width: 1920px) {
+	.imagen-anime {
+		width: 300px;
+		height: 400px;
+	}
+	
 }
