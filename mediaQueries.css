@@ -1,0 +1,46 @@
+/* Estilos generales para todas las pantallas */
+body {
+	font-family: 'Inconsolata', monospace;
+	/* Otros estilos generales */
+}
+
+/* @media para impresión */
+@media print {
+	body {
+		font-size: 12px;
+		/* Otros estilos de impresión */
+	}
+}
+
+/* @media para celular vertical */
+@media screen and (max-width: 575px) and (max-height: 991px) and (orientation: portrait) {
+	.main {
+		padding: 10px;
+	}
+	/* Otros estilos para celular vertical */
+}
+
+/* @media para celular apaisado */
+@media screen and (max-width: 991px) and (orientation: landscape) {
+	.main {
+		padding: 20px;
+	}
+	/* Otros estilos para celular apaisado */
+}
+
+/* @media para el resto de pantallas */
+@media screen and (min-width: 992px), screen and (min-height: 992px) {
+	.main {
+		padding: 30px;
+	}
+	/* Otros estilos para el resto de pantallas */
+}
+
+/* Estilos específicos para tabletas (mínimo ancho 930px) */
+@media screen and (min-width: 930px) {
+	/* Estilos para tabletas */
+	.form-fieldset {
+		border: 2px solid #ccc;
+	}
+	/* Otros estilos para tabletas */
+}
