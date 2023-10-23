@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Media Queries -->
+    <link rel="stylesheet" href="tablets.css" media="(min-width:930px)" />
+    <link rel="stylesheet" href="mediaQueries.css" />
+    	<!-- animations -->
+	<link rel="stylesheet" href="animations.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <main>
+        <form class="form">
+            <fieldset class="form-fieldset">
+                <!-- Nombre -->
+                <legend class="form-fieldset__text">Información Personal</legend>
+                <div class="input-container outline">
+                    <label for="fname" class="enter-name sr-only">Ingrese el nombre</label>
+                    <input type="text" id="fname" class="name input" name="fname" placeholder="Nombre" />
+                </div>
+                <div class="input-container outline">
+                    <label for="fpassword" class="enter-password sr-only">Ingrese password</label>
+                    <input type="text" id="fpassword" class="password input" name="fpassword" placeholder="Password"
+                        onkeyup="passwordValidation()" />
+                </div>
+                <div class="input-container outline">
+                    <label for="femail" class="enter-email sr-only">Ingrese email</label>
+                    <input type="text" id="femail" class="email input" name="femail" placeholder="Email" />
+                </div>
+
+                <!-- Verificación de si es un robot -->
+                <div class="box box4">
+                    <input type="checkbox" name="robot" />
+                    <label for="robot">No soy un robot</label>
+                </div>
+                <!-- Buttones para limpiar o enviar información -->
+                <div class="container-buttons">
+                    <input type="submit" class="button button1" value="Login" />
+                    <input type="reset" class="button button2" value="Limpiar" />
+                </div>
+            </fieldset>
+        </form>
+        <div id="mensaje"></div>
+        <h6 id="warning-title"></h6>
+    </main>
+    <script src="ejercicio7.js" type="text/javascript"></script>
+</body>
+
+</html>
