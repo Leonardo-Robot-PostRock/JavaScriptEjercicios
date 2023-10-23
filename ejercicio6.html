@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla de Personas</title>
+</head>
+<body>
+    <table id="tablaPersonas">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán los registros -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Arreglo de objetos con personas
+            var personas = [
+                { nombre: 'Juan', edad: 30 },
+                { nombre: 'María', edad: 25 },
+                { nombre: 'Pedro', edad: 35 },
+            ];
+
+            // Obtén la referencia de la tabla
+            var tabla = document.getElementById('tablaPersonas');
+            var tbody = tabla.querySelector('tbody');
+
+            // Itera sobre el arreglo de personas y agrega filas a la tabla
+            personas.forEach(function (persona) {
+                var fila = document.createElement('tr');
+
+                var nombreCell = document.createElement('td');
+                nombreCell.textContent = persona.nombre;
+                fila.appendChild(nombreCell);
+
+                var edadCell = document.createElement('td');
+                edadCell.textContent = persona.edad;
+                fila.appendChild(edadCell);
+
+                tbody.appendChild(fila);
+            });
+        });
+    </script>
+</body>
+</html>
