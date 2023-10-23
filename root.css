@@ -1,0 +1,31 @@
+/* Paleta de 5 colores */
+:root {
+	--color-monocrom-blue-dark: #002b55;
+	--color-monocrom-blue-medium: #0055aa;
+	--color-monocrom-blue-light: #007fff;
+	--color-monocrom-blue-pale: #55aaff;
+	--color-monocrom-blue-pastel: #aad4ff;
+	--color-gray: #adadad;
+	--color-white: #ffffff;
+    --color-black: #000000;
+    --clr: #27cc35;
+    --dark: #171717; 
+    --light: #f8f8ff; 
+    --font: 'Poppins', sans-serif;
+	/* Roboto Font Family */
+	/* Source Serif Pro Font Family */
+	/* Source Code Pro Font Family */
+	--font-source-code-pro: 'Source Code Pro', 'Source Code Pro Black',
+		'Source Code Pro ExtraLight', 'Source Code Pro Light',
+		'Source Code Pro Medium', 'Source Code Pro Semibold';
+
+	/* Source Sans Pro Font Family */
+	--font-source-sans-pro: 'Source Sans Pro', 'Source Sans Pro Black',
+		'Source Sans Pro ExtraLight', 'Source Sans Pro Light',
+		'Source Sans Pro Semibold';
+
+	/* Source Serif Pro Font Family */
+	--font-source-serif-pro: 'Source Serif Pro', 'Source Serif Pro Black',
+		'Source Serif Pro ExtraLight', 'Source Serif Pro Light',
+		'Source Serif Pro Semibold';
+}
