@@ -33,5 +33,5 @@ npm start
 
 ```
 
-4. **Levantar archivos datos.php:** Debe usar XAMPP o MAMP, el localhost configurado es 8085, pero puede usar el que usted quiera.
+4. **Levantar archivos datos.php para Ejercicio 4:** Debe usar XAMPP o MAMP, el localhost configurado es 8085, pero puede usar el que usted quiera.
 5. **Ejercicio 2.5:** Debe abrir pdf llamado *PueblaLeonardoTP4PP1.pdf*
