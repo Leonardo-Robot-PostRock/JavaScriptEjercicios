@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.container {
+  width: 400px; 
+  margin: auto; 
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.input {
+  padding: 1em; 
+  width: 100%; 
+  border-radius: 0; 
+  border: none; 
+  background-color: #242424;
+  color: var(--light);
+}
+
+.input:focus {
+  outline: none; 
+  box-shadow: none; 
+}
+
+::placeholder {
+  color: #ccc;
+  font-family: var(--font);
+}
+
+.input-container {
+  padding: 2px; 
+  margin: 1.5rem 0;  
+}
+
+.input-container.outline .input:focus {
+  animation-name: animate-in; 
+  animation-duration: 1s;
+  background-image: linear-gradient(to right, var(--color-monocrom-blue-dark), var(--color-monocrom-blue-dark)), 
+  linear-gradient(to bottom, var(--color-monocrom-blue-dark), var(--color-monocrom-blue-dark)), 
+  linear-gradient(to right, var(--color-monocrom-blue-dark), var(--color-monocrom-blue-dark)),
+  linear-gradient(to bottom, var(--color-monocrom-blue-dark), var(--color-monocrom-blue-dark)); 
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%; 
+  background-repeat: no-repeat;   
+}
+
+@keyframes animate-in {
+  0% {
+    background-size: 0 2px, 0 0, 0 0, 0 0; 
+  }
+
+  25% {
+    background-size: 100% 2px, 0 0, 0 0, 0 0; 
+  }
+
+  50% {
+    background-size: 100% 2px, 2px 100%, 0 0, 0 0; 
+  }
+
+  75% {
+    background-size: 100% 2px, 2px 100%, 100% 2px, 0 0; 
+  }
+
+  100% {
+    background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%; 
+  }
+}
