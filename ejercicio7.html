@@ -11,23 +11,31 @@
     <link rel="stylesheet" href="mediaQueries.css" />
     <!-- animations -->
     <link rel="stylesheet" href="animations.css" />
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500&display=swap" rel="stylesheet" />
+    <!-- Google Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
     <main>
-        <form class="form" action="localhost" method="POST" onsubmit="handleFormSubmit(event)">
+        <form class="form" action="http://localhost:8085/pp1_tp4/registro.php" method="POST"
+            onsubmit="handleFormSubmit(event)">
             <fieldset class="form-fieldset">
-                <!-- Nombre -->
                 <legend class="form-fieldset__text">Información Personal</legend>
+                <!-- Nombre -->
                 <div class="input-container input-one outline">
                     <label for="fname" class="enter-name sr-only">Ingrese el nombre</label>
                     <input type="text" id="fname" class="name input" name="fname" placeholder="Nombre" />
                 </div>
+                <!-- Password -->
                 <div class="input-container input-two outline">
                     <label for="fpassword" class="enter-password sr-only">Ingrese password</label>
                     <input type="text" id="fpassword" class="password input" name="fpassword" placeholder="Password" />
+                    <span class="material-symbols-outlined password-toggle">visibility</span>
                 </div>
+                <!-- Email -->
                 <div class="input-container input-three outline">
                     <label for="femail" class="enter-email sr-only">Ingrese email</label>
                     <input type="text" id="femail" class="email input" name="femail" placeholder="Email" />
@@ -40,7 +48,7 @@
                 </div>
                 <!-- Buttones para limpiar o enviar información -->
                 <div class="container-buttons">
-                    <input type="submit" class="button button1" value="Login" disabled />
+                    <input type="submit" class="button button1" value="Registrarse" disabled />
                     <input type="reset" class="button button2" value="Limpiar">
                 </div>
             </fieldset>
