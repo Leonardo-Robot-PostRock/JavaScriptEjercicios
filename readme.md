@@ -21,6 +21,7 @@ Sigue estos pasos simples para ejecutar el proyecto con Express:
    ```
 
 2. **Instalar dependencias**: Navega al directorio del proyecto en tu terminal y ejecuta el siguiente comando para instalar todas las dependencias necesarias.
+
 ```
 npm install
 
@@ -34,4 +35,7 @@ npm start
 ```
 
 4. **Levantar archivos datos.php para Ejercicio 4:** Debe usar XAMPP o MAMP, el localhost configurado es 8085, pero puede usar el que usted quiera.
-5. **Ejercicio 2.5:** Debe abrir pdf llamado *ejercicio5.pdf*
+5. **Ejercicio 2.5:** Debe abrir pdf llamado _ejercicio5.pdf_
+6. **Ejercicio 2.7:** Debe usar XAMPP o MAMP, el localhost en archivo html esta configurado como http://localhost:8085/pp1_tp4/registro.php 
+7. **Alojar el registro.php en directorio XAMPP**
+
