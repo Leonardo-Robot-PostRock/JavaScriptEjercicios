@@ -177,7 +177,6 @@ const isEmailValid = () => {
 const isChecked = () => {
 	const checkbox = document.querySelector('#checkbox');
 	checkbox.addEventListener('change', (event) => {
-		console.log(event.target.checked);
 		isChecking = event.target.checked;
 		activeButton();
 	});

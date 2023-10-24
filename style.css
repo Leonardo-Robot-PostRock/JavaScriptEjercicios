@@ -31,7 +31,7 @@ main {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-    user-select: none;
+	user-select: none;
 }
 
 .form-fieldset {
@@ -51,7 +51,7 @@ main {
 
 .input-container {
 	display: flex;
-    margin-top: 10px;
+	margin-top: 10px;
 	width: 100%;
 	flex-direction: column;
 }
@@ -61,8 +61,13 @@ main {
 	padding: 10px;
 }
 
+/* Formato de capitalización */
+#name {
+	text-transform: capitalize;
+}
+
 label:not(:last-of-type) {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .input {
@@ -107,7 +112,7 @@ label:not(:last-of-type) {
 	margin-bottom: 10px;
 }
 
-#mensaje,
+#message,
 #warning-title {
 	padding: 10px;
 	font-size: 1.2rem;
