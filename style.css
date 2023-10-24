@@ -8,6 +8,7 @@
 	padding: 0;
 	font-size: 62.5%;
 	box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 body {
@@ -20,10 +21,12 @@ body {
 main {
 	align-items: center;
 	display: flex;
+	margin: 10px 0;
 	min-width: 280px;
 	flex-direction: column;
 	font-size: 16px;
 	height: 100vh;
+	width: 100vw;
 	justify-content: center;
 }
 
@@ -40,7 +43,7 @@ main {
 	width: 40%;
 	display: flex;
 	flex-direction: column;
-	padding: 10px;
+	padding: 20px;
 	border: 1px solid;
 	font-size: 4rem;
 }
@@ -51,19 +54,39 @@ main {
 
 .input-container {
 	display: flex;
-	margin-top: 10px;
 	width: 100%;
+	position: relative;
 	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
 }
 
 .input-container > .input {
 	outline: none;
-	padding: 10px;
+	position: relative;
+	height: 40px;
+}
+
+.input-container > .password {
+	padding-right: 45px; /* Añade espacio a la derecha para el icono */
+	font-size: 16px;
 }
 
 /* Formato de capitalización */
 #name {
 	text-transform: capitalize;
+}
+
+.password-toggle {
+	z-index: 2;
+	position: absolute;
+	right: 0;
+	overflow: hidden;
+	padding-right: 15px;
+	top: 10px;
+	width: 40px; /* Ancho fijo para el icono */
+	cursor: pointer;
+	text-align: end;
 }
 
 label:not(:last-of-type) {
@@ -73,6 +96,16 @@ label:not(:last-of-type) {
 .input {
 	height: 30px;
 }
+
+/* .message-name {
+	position: relative;
+	margin-top: 40px;
+}
+
+.message-password {
+	position: relative;
+	margin-top: 100px;
+} */
 
 .box {
 	display: flex;
@@ -98,6 +131,7 @@ label:not(:last-of-type) {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	overflow: hidden;
 	font-weight: bold;
 	padding: 10px;
 	border-radius: 3px;
@@ -112,8 +146,8 @@ label:not(:last-of-type) {
 	margin-bottom: 10px;
 }
 
-#message,
-#warning-title {
-	padding: 10px;
+.message,
+.warning-title {
+	padding: 5px;
 	font-size: 1.2rem;
 }
