@@ -109,6 +109,22 @@ const isNameValid = () => {
 	activeButton();
 };
 
+//Mostrar Contraseña
+const passwordField = document.getElementById('fpassword');
+const eyeIcon = document.querySelector('.password-toggle');
+
+eyeIcon.addEventListener('click', togglePassword);
+
+function togglePassword() {
+	if (passwordField.type === 'password') {
+		passwordField.type = 'text';
+		eyeIcon.textContent = 'visibility';
+	} else {
+		passwordField.type = 'password';
+		eyeIcon.textContent = 'visibility_off';
+	}
+}
+
 // Validación de PASSWORD
 const isPasswordValid = () => {
 	const passwordField = document.querySelector('#fpassword');
@@ -199,7 +215,12 @@ const activeButton = () => {
 
 function handleFormSubmit(event) {
 	event.preventDefault();
-	if (isNameValidated && isPasswordValidated && isEmailValidated && isChecking) {
+	if (
+		isNameValidated &&
+		isPasswordValidated &&
+		isEmailValidated &&
+		isChecking
+	) {
 		event.target.submit();
 	}
 }
