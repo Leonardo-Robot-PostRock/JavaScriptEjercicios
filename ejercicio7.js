@@ -110,7 +110,7 @@ const isNameValid = () => {
 };
 
 //Mostrar Contraseña
-const passwordField = document.getElementById('fpassword');
+const passwordField = document.querySelector('#fpassword');
 const eyeIcon = document.querySelector('.password-toggle');
 
 eyeIcon.addEventListener('click', togglePassword);
