@@ -97,16 +97,6 @@ label:not(:last-of-type) {
 	height: 30px;
 }
 
-/* .message-name {
-	position: relative;
-	margin-top: 40px;
-}
-
-.message-password {
-	position: relative;
-	margin-top: 100px;
-} */
-
 .box {
 	display: flex;
 	align-items: center;
