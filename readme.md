@@ -38,4 +38,5 @@ npm start
 5. **Ejercicio 2.5:** Debe abrir pdf llamado _ejercicio5.pdf_
 6. **Ejercicio 2.7:** Debe usar XAMPP o MAMP, el localhost en archivo html esta configurado como http://localhost:8085/pp1_tp4/registro.php 
 7. **Alojar el registro.php en directorio XAMPP**
+8. **Ejercicio 2.10:** Debe abrir pdf llamado _ejercicio10.pdf_
 
